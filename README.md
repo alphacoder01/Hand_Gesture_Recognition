@@ -16,4 +16,4 @@ Contains reproducible code for Hand Gesture recognizer.
   
 *Results Directory contains the accuracy and loss plots of the trained model, achieving over **99% accuracy on both train and test sets**.
 
-*Pretrained model file as well as pickle file to be uploaded soon.
+*Pretrained model file as well as pickle files are uploaded now!
