@@ -1,3 +1,4 @@
+# importing necessary libraries
 import cv2
 import numpy as np
 
@@ -7,10 +8,11 @@ delay= 0
 while True:
     ret,frame = cap.read()
     delay += 1
+#   Taking a small rectangel in the lower left corner as ROI.   
     cv2.rectangle(frame,(0,416),(224,224),(0,255,0),2)
     crop_img = frame[192:416,0:224]
     gray = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY)
-
+#   Processing captured roi.
     ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
     kernel = np.ones((3,3,), np.uint8)
     opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=2)
@@ -23,7 +25,10 @@ while True:
     final = cv2.GaussianBlur(final,(5,5),0)
     cv2.imshow('un',final)
     if delay%5 ==0:
-                # create the directory containing sub-dir for that person's image
+                # create the directory as per your needs.
+#             use the commented statement to create the training data.
+#             cv2.imwrite('path/to/your/folder/%s.jpg',%str(count),final)
+#     Below statement can be used to generate test data.
             cv2.imwrite('G:/open cv/Hand_Gesture/Hand_data/Test_data/%s.jpg'%str(count),final)
             count += 1
 
