@@ -3,8 +3,11 @@ Contains reproducible code for Hand Gesture recognizer.
 
 *Dependencies:
   1. Tensorflow-gpu=1.14
+    => conda install -c anaconda tensorflow-gpu=1.14
   2. Keras=2.2.4
+    => conda install -c conda-forge keras=2.2.4
   3. Open cv
+    => conda install opencv-python
   4. Python=3.6
   5. PIL
   
